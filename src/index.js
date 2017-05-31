@@ -3,15 +3,20 @@ import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
   Route,
+  Switch,
 } from 'react-router-dom'
 
 import App from './App';
+import NoMatch from './NoMatch';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
 const Main = () => (
   <Router>
-    <Route exact path="/" component={App}/>
+    <Switch>
+      <Route exact path="/" component={App}/>
+      <Route component={NoMatch} />
+    </Switch>
   </Router>
 )
 
